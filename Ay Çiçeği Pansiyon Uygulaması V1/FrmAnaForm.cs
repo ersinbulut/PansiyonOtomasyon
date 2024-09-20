@@ -30,5 +30,19 @@ namespace Ay_Çiçeği_Pansiyon_Uygulaması_V1
             frm.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmOdalar fr = new FrmOdalar();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmMusteriler fr = new FrmMusteriler();
+            fr.Show();
+            this.Hide();
+        }
     }
 }

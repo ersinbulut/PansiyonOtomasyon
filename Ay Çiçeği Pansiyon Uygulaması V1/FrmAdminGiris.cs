@@ -16,5 +16,19 @@ namespace Ay_Çiçeği_Pansiyon_Uygulaması_V1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (TxtKullaniciAdi.Text == "admin" && TxtSifre.Text =="123456")
+            {
+                FrmAnaForm frm = new FrmAnaForm();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı");
+            }
+        }
     }
 }

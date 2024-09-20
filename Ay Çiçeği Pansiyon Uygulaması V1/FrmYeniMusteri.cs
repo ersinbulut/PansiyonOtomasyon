@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace Ay_Çiçeği_Pansiyon_Uygulaması_V1
 {
@@ -16,6 +18,8 @@ namespace Ay_Çiçeği_Pansiyon_Uygulaması_V1
         {
             InitializeComponent();
         }
+        SqlConnection baglanti = new SqlConnection("Data Source=LENOVO-ERSIN;Initial Catalog=AycicegiPansiyon;Integrated Security=True;TrustServerCertificate=True");
+
 
         private void BtnOda101_Click(object sender, EventArgs e)
         {
@@ -86,6 +90,37 @@ namespace Ay_Çiçeği_Pansiyon_Uygulaması_V1
             Ucret = Convert.ToInt32(label11.Text) * 50;
             TxtUcret.Text = Ucret.ToString();
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+
+            string query = "INSERT INTO MusteriEkle" +
+                           "(Adi, Soyadi, Cinsiyet, Telefon, Mail, TC, OdaNo, Ucret, GirisTarihi, CikisTarihi)" +
+                           "VALUES (@Adi, @Soyadi, @Cinsiyet, @Telefon, @Mail, @TC, @OdaNo, @Ucret, @GirisTarihi, @CikisTarihi)";
+
+            SqlCommand komut = new SqlCommand(query, baglanti);
+            komut.Parameters.AddWithValue("@Adi", TxtAdi.Text);
+            komut.Parameters.AddWithValue("@Soyadi", TxtSoyadi.Text);
+            komut.Parameters.AddWithValue("@Cinsiyet", comboBox1.Text);
+
+            // Clean the phone number before inserting it
+            string cleanedPhone = MskTxtTelefon.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+            komut.Parameters.AddWithValue("@Telefon", cleanedPhone);
+
+            komut.Parameters.AddWithValue("@Mail", TxtMail.Text);
+            komut.Parameters.AddWithValue("@TC", TxtTcKimlikNo.Text);
+            komut.Parameters.AddWithValue("@OdaNo", TxtOdaNumarasi.Text);
+            komut.Parameters.AddWithValue("@Ucret", TxtUcret.Text); // Assuming TxtUcret is a string, convert to proper type if necessary
+            komut.Parameters.AddWithValue("@GirisTarihi", DtpGirisTarihi.Value.ToString("yyyy-MM-dd"));
+            komut.Parameters.AddWithValue("@CikisTarihi", DtpCikisTarihi.Value.ToString("yyyy-MM-dd"));
+
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+
+            MessageBox.Show("Müşteri Kaydı Yapıldı.");
 
         }
     }

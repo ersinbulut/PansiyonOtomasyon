@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminGiris));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtSoyadi = new System.Windows.Forms.TextBox();
-            this.TxtAdi = new System.Windows.Forms.TextBox();
+            this.TxtSifre = new System.Windows.Forms.TextBox();
+            this.TxtKullaniciAdi = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,39 +43,40 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(91, 141);
+            this.label1.Location = new System.Drawing.Point(38, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 20);
+            this.label1.Size = new System.Drawing.Size(98, 20);
             this.label1.TabIndex = 30;
-            this.label1.Text = "Adı:";
+            this.label1.Text = "Kullanıcı Adı:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(75, 177);
+            this.label2.Location = new System.Drawing.Point(92, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Soyadı:";
+            this.label2.Text = "Şifre:";
             // 
-            // TxtSoyadi
+            // TxtSifre
             // 
-            this.TxtSoyadi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.TxtSoyadi.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtSoyadi.Location = new System.Drawing.Point(142, 170);
-            this.TxtSoyadi.Name = "TxtSoyadi";
-            this.TxtSoyadi.Size = new System.Drawing.Size(197, 27);
-            this.TxtSoyadi.TabIndex = 33;
+            this.TxtSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.TxtSifre.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtSifre.Location = new System.Drawing.Point(142, 170);
+            this.TxtSifre.Name = "TxtSifre";
+            this.TxtSifre.Size = new System.Drawing.Size(197, 27);
+            this.TxtSifre.TabIndex = 33;
+            this.TxtSifre.UseSystemPasswordChar = true;
             // 
-            // TxtAdi
+            // TxtKullaniciAdi
             // 
-            this.TxtAdi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.TxtAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtAdi.Location = new System.Drawing.Point(142, 134);
-            this.TxtAdi.Name = "TxtAdi";
-            this.TxtAdi.Size = new System.Drawing.Size(197, 27);
-            this.TxtAdi.TabIndex = 32;
+            this.TxtKullaniciAdi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.TxtKullaniciAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtKullaniciAdi.Location = new System.Drawing.Point(142, 134);
+            this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
+            this.TxtKullaniciAdi.Size = new System.Drawing.Size(197, 27);
+            this.TxtKullaniciAdi.TabIndex = 32;
             // 
             // pictureBox1
             // 
@@ -106,6 +107,7 @@
             this.button1.TabIndex = 37;
             this.button1.Text = "Giriş Yap";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmAdminGiris
             // 
@@ -118,8 +120,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtSoyadi);
-            this.Controls.Add(this.TxtAdi);
+            this.Controls.Add(this.TxtSifre);
+            this.Controls.Add(this.TxtKullaniciAdi);
             this.Name = "FrmAdminGiris";
             this.Text = "FrmAdminGiris";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -132,8 +134,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtSoyadi;
-        private System.Windows.Forms.TextBox TxtAdi;
+        private System.Windows.Forms.TextBox TxtSifre;
+        private System.Windows.Forms.TextBox TxtKullaniciAdi;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;

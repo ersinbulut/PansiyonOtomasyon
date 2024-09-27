@@ -66,6 +66,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtİsim = new System.Windows.Forms.TextBox();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -90,6 +91,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -155,6 +157,7 @@
             this.btnGuncelle.TabIndex = 2;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
@@ -165,11 +168,12 @@
             this.btnSil.TabIndex = 3;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnAra
             // 
             this.btnAra.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAra.Location = new System.Drawing.Point(661, 129);
+            this.btnAra.Location = new System.Drawing.Point(661, 174);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(127, 33);
             this.btnAra.TabIndex = 4;
@@ -389,12 +393,24 @@
             this.txtİsim.Size = new System.Drawing.Size(197, 27);
             this.txtİsim.TabIndex = 62;
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTemizle.Location = new System.Drawing.Point(661, 135);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(127, 33);
+            this.btnTemizle.TabIndex = 63;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // FrmMusteriler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtİsim);
             this.Controls.Add(this.TxtUcret);
@@ -469,5 +485,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtİsim;
+        private System.Windows.Forms.Button btnTemizle;
     }
 }
